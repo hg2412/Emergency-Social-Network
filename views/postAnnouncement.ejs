@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Emergency Social Network</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/stylesheets/announcement.css"/>
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<header>
+    <% include navigationbar.ejs %>
+</header>
+<div class="container" style = "padding: 0">
+    <div class="col-md-12 col-lg-6">
+        <div class="panel">
+            <!--Heading-->
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    <span class="glyphicon glyphicon-bullhorn"></span> &nbsp;Announcement &nbsp;
+                    <span class="glyphicon glyphicon-user"></span> &nbsp;<span id="username"><%- user.username %></span>
+                </h3>
+            </div>
+
+            <!--Widget body-->
+            <div id="demo-chat-body" class="collapse in">
+                <div style="height:60vh">
+                    <div class="nano has-scrollbar">
+                        <div class="nano-content pad-all" tabindex="0"  style="right: -17px;">
+                            <ul class="list-unstyled media-block">
+                                <div id="msg-list" ></div>
+                            </ul>
+                        </div>
+                        <div class="nano-pane">
+                            <div class="nano-slider" style="height: 141px; transform: translate(0px, 0px);"></div>
+                        </div>
+                    </div>
+
+                    <!--Widget footer-->
+                    <div class="panel-footer">
+                        <div class="form-group">
+                            <textarea class="form-control" rows="3" id="newAnnouncement"
+                                      placeholder="Please input ..."></textarea>
+                        </div>
+                        <div class="form-group" align="right">
+                            <button type="button" class="btn btn-primary" id="postButton">Post</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="/javascripts/lib/jquery.min.js"></script>
+<script type="text/javascript" src="/javascripts/post_announcement/post_announcement.js"></script>
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Emergency Social Network</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://unpkg.com/react@15.3.2/dist/react-with-addons.js"></script>
+    <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-core@5.8.38/browser.min.js"></script>
+    <link href="/stylesheets/shareStatus.css" rel="stylesheet">
+    <script type="application/javascript; version=1.7"></script>
+    <script src="/socket.io/socket.io.js"></script>
+
+</head>
+<body>
+
+<header>
+    <% include navigationbar.ejs %>
+</header>
+
+<div class="jumbotron text-center">
+    <div id='welcome_page'>
+        <h1>Emergency Social Network SA8</h1>
+        <h2><p id='welcome_content'>Search</p></h2>
+    </div>
+</div>
+
+<div class="container">
+    <form>
+        <div class="form-group">
+            <label for="sel1">Search Context:</label>
+            <select class="form-control" id="sel1">
+                <option>Citizens by Name</option>
+                <option>Citizens by Status</option>
+                <option>Public Messages</option>
+                <option>Public Announcements</option>
+                <option>Private Messages</option>
+            </select>
+            <br>
+            <div id="search_criteria_div">
+            </div>
+        </div>
+    </form>
+    <div class="container" id="search_result_container" hidden="true">
+        <a href="#" class="list-group-item disabled">
+            Search Result
+        </a>
+        <div class="list-group" id="search_results_list">
+        </div>
+    </div>
+    <div class="container" id = "pager_container">
+    </div>
+
+
+</div>
+
+
+<script src="/javascripts/lib/jquery.min.js"></script>
+<script src="/javascripts/lib/sha256.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="/javascripts/search_information/searchInformation.js"></script>
+</body>
+</html>

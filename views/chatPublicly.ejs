@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Public Chat Wall</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://unpkg.com/react@15.3.2/dist/react-with-addons.js"></script>
+    <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-core@5.8.38/browser.min.js"></script>
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/stylesheets/chatPublicly.css" rel="stylesheet">
+    <script type="application/javascript; version=1.7"></script>
+    <script src="/socket.io/socket.io.js"></script>
+
+</head>
+<body>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<header>
+    <% include navigationbar.ejs %>
+</header>
+<div class="container" style="padding: 0">
+    <div class="col-xs-12 col-md-12 col-lg-6" style="padding-left: 0px; padding-right: 0px;">
+        <div class="panel">
+            <!--Heading-->
+            <div class="panel-heading">
+                <h3 class="panel-title">Chat Publicly: <span id="username_div"><%=session.user.username%></span>_<span id="user-status"><%=session.user.status%></span></h3>
+            </div>
+            <div id="chat-area">
+            </div>
+            <script type="text/babel" src="/javascripts/chat_publicly/chat_publicly.jsx"></script>
+        </div>
+    </div>
+</div>
+
+<script src="/javascripts/lib/jquery.min.js"></script>
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</body>
+</html>

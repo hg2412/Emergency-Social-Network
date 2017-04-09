@@ -1,0 +1,13 @@
+deployment:
+  staging:
+    branch: master
+    heroku:
+      appname: fse-sa8
+
+dependencies:
+  pre:
+    - npm install -g istanbul
+
+general:
+  artifacts:
+    - ./coverage

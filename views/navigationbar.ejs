@@ -1,0 +1,29 @@
+<nav class="navbar navbar-inverse" style="margin-bottom: 0;">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">ESN</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+
+                <li><a href="/chatPublicly" onclick="$('#myNavbar').collapse('hide');"><span
+                                class="glyphicon glyphicon-tower"></span> Chat Publicly</a></li>
+                <li><a id='directory_navi_bar'
+                       onclick="$('#myNavbar').collapse('hide');$('#signup_page').hide();$('#directory_container').collapse('toggle')"><span
+                                class="glyphicon glyphicon-th-list"></span> Directory</a></li>
+                <li><a href="/announce"><span class="glyphicon glyphicon-bullhorn"></span> Post Announcement</a></li>
+                <li><a href="/search"><span class="glyphicon glyphicon-search"></span> Search</a></li>
+                <li><a href="/findNearby"><span class="glyphicon glyphicon-search"></span> Find Nearby</a></li>
+                <li><a href="/admin" onclick="$('#myNavbar').collapse('hide');"><span
+                                class="glyphicon glyphicon-tower"></span> Administer User Profile</a></li>
+                <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Emergency Social Network</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://unpkg.com/react@15.3.2/dist/react-with-addons.js"></script>
+    <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-core@5.8.38/browser.min.js"></script>
+    <link href="/stylesheets/pagination.css" rel="stylesheet">
+    <link href="/stylesheets/shareStatus.css" rel="stylesheet">
+    <script type="application/javascript; version=1.7"></script>
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+<header>
+    <% include navigationbar.ejs %>
+</header>
+<div class="jumbotron text-center">
+    <div id='welcome_page'>
+        <h3>Emergency Social Network</h3>
+        <h2><span id='welcome_content'>Administer User Profile</span></h2>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-md-12">
+            <div id="userlist"></div>
+        </div>
+    </div>
+</div>
+
+
+<script src="/javascripts/lib/jquery.min.js"></script>
+<script src="/javascripts/lib/sha256.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="/javascripts/lib/pagination.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script type="text/babel" src="/javascripts/administrator_profile/admin_profile.jsx"></script>
+
+</body>
+</html>

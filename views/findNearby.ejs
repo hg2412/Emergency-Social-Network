@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Emergency Social Network</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://unpkg.com/react@15.3.2/dist/react-with-addons.js"></script>
+    <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-core@5.8.38/browser.min.js"></script>
+    <script type="application/javascript; version=1.7"></script>
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+
+<header>
+    <% include navigationbar.ejs %>
+</header>
+
+
+<div id="map" style="min-height: 60vh">
+</div>
+<div id="mapid"></div>
+
+<script type="text/babel" src="/javascripts/find_nearby/find_nearby.jsx"></script>
+
+
+<div class="container">
+    <div class="row">
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#menu1">My Location</a></li>
+            <li><a data-toggle="tab" href="#menu2">Citizens Nearby</a></li>
+            <li><a data-toggle="tab" href="#menu3">Events Nearby</a></li>
+        </ul>
+
+        <div class="tab-content" style="overflow : scroll; height: 25vh;">
+            <div id="menu1" class="tab-pane fade in active">
+                <strong>Waiting for your location ... </strong>
+            </div>
+            <div id="menu2" class="tab-pane fade">
+
+            </div>
+            <div id="menu3" class="tab-pane fade">
+                <strong>loading events ....</strong>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<script src="/javascripts/lib/jquery.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
+<script src="/javascripts/lib/lrz.bundle.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-93XowaZEI08zauWBkGp_3Mjqkl00K4A"></script>
+<script src="https://unpkg.com/react@15/dist/react.js"></script>
+<script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+
+<script>
+
+</script>
+
+</body>
+</html>

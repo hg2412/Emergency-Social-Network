@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Emergency Social Network</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://unpkg.com/react@15.3.2/dist/react-with-addons.js"></script>
+    <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-core@5.8.38/browser.min.js"></script>
+    <link href="/stylesheets/pagination.css" rel="stylesheet">
+    <link href="/stylesheets/shareStatus.css" rel="stylesheet">
+    <script type="application/javascript; version=1.7"></script>
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+<header>
+    <% include navigationbar.ejs %>
+</header>
+<div class="jumbotron text-center">
+    <div id='welcome_page'>
+        <h1>Edit Profile</h1>
+        <h2 id="oldUsername"><%-user.username%></h2>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-md-12">
+            <form>
+                <div class="form-group row">
+                    <label for="newUsername" class="col-xs-3 col-form-label">Username</label>
+                    <div class="col-xs-9">
+                        <input class="form-control" type="text" value="<%-user.username%>" id="newUsername">
+                        </input>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="newPassword" class="col-xs-3 col-form-label">Password</label>
+                    <div class="col-xs-9">
+                        <input class="form-control" type="password" value="<%-user.password%>" id="newPassword">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="accountStatus" class="col-xs-5">Account Status</label>
+                    <div class=" col-xs-7">
+                    <select class="form-control" id="accountStatus">
+                        <option  <%if (user.accountStatus == "active") {%>selected="selected" <%}%>>active</option>
+                        <option  <%if (user.accountStatus == "inactive") {%> selected="selected" <%}%>>inactive</option>
+                    </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="accountStatus" class="col-xs-5">Privilege Level</label>
+                    <div class=" col-xs-7">
+                    <select class="form-control" id="privilege">
+                        <option <%if (user.privilege == "citizen"){%> selected="selected" <%}%>>citizen</option>
+                        <option <%if (user.privilege == "coordinator"){%>selected="selected" <%}%> >coordinator</option>
+                        <option <%if (user.privilege == "administrator"){%> selected="selected" <%}%> >administrator</option>
+                    </select>
+                    </div>
+                </div>
+                <div class="form-group text-center">
+                    <div class="col-xs-6">
+                        <button type="button" class="btn btn-primary" id="save-btn">   &nbsp;Save&nbsp;   </button>
+                    </div>
+                    <div class="col-xs-6">
+                        <a type="button" class="btn btn-info" onclick="window.location.reload()">Reset</a>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+<script src="/javascripts/lib/jquery.min.js"></script>
+<script src="/javascripts/lib/sha256.js"></script>
+<script src="/javascripts/join_community/features.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+
+    input_checking = function(){
+        var username = $("#newUsername").val();
+        var pass = $("#newPassword").val();
+
+        if (username.length < 3) {
+            alert('username must be at least 3 characters!');
+            return false;
+        } else if (username.match(reserveWord)) {
+            alert('sorry, it\'s a reserved word, please change another one.');
+            return false;
+        } else if (pass.length < 4) {
+            alert('password must be at least 4 characters!');
+            return false;
+        }
+
+        return true;
+    }
+
+
+    //function to save User, after saving, it redirect to admin page
+    saveUser = function(){
+        if (input_checking() == false) return;
+        else{
+            var data={};
+            data.oldUserName = $("#oldUsername").text();
+            data.newUserName = $("#newUsername").val();
+            data.password = $("#newPassword").val();
+            data.accountStatus = $("#accountStatus").val();
+            data.privilege = $("#privilege").val();
+            console.log(data);
+            //post request
+            $.post("/admin/userInfo", data, function(res){
+                //success
+                console.log(res.status);
+                if (res.status) {
+                    alert("The user's profile changed!");
+                } else {
+                    alert("The user's profile didn't change! Illegal change!");
+                }
+            }).fail(function() {
+                alert( "error" );
+            }).always(function(){
+                //jump to admin page
+                window.location.replace("/admin");
+            });
+        }
+    }
+    // bind save function to save button's onclick
+    $( "#save-btn" ).on( "click", function() {
+        saveUser();
+    });
+
+
+</script>
+
+</body>
+</html>

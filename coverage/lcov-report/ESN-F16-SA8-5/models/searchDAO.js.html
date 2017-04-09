@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for ESN-F16-SA8-5/models/searchDAO.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">ESN-F16-SA8-5/models/</a> searchDAO.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">93.44% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>57/61</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>4/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">71.43% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>10/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">93.44% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>57/61</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span></td><td class="text"><pre class="prettyprint lang-js">"use strict";
+var userOnlineInfo = require('./userOnlineInfo.js').userInfo;
+var User = global.dbHandle.getModel("user");
+var Announcement = global.dbHandle.getModel("announcement");
+var ChatMessage = global.dbHandle.getModel("chatMessage");
+var ChatPrivately = global.dbHandle.getModel("chatPrivately");
+&nbsp;
+var searchDAO = {};
+&nbsp;
+searchDAO.searchCitizenByUsername = function(username, callback){
+	let regexUsername = new RegExp(username, 'i');
+	User.find({"username": {$regex: regexUsername}}, function(err, users){
+		let usersOnline = [];
+		let usersOffline = [];
+		for(let i in users){
+			if(userOnlineInfo[users[i].username] == "online"){
+				usersOnline.push(users[i]);
+			}
+			else{
+				usersOffline.push(users[i]);
+			}
+		}
+		usersOnline.sort(<span class="fstat-no" title="function not covered" >function(a, b){</span>
+<span class="cstat-no" title="statement not covered" >			return a.username &gt; b.username;</span>
+		});
+		usersOffline.sort(<span class="fstat-no" title="function not covered" >function(a, b){</span>
+<span class="cstat-no" title="statement not covered" >			return a.username &gt; b.username;</span>
+		});
+		callback(usersOnline, usersOffline);
+	});
+};
+&nbsp;
+searchDAO.searchCitizenByStatus = function(status, callback){
+	User.find({"status": status}, function(err, users){
+		let usersOnline = [];
+		let usersOffline = [];
+		for(let i in users){
+			if(userOnlineInfo[users[i].username] == "online"){
+				usersOnline.push(users[i]);
+			}
+			else{
+				usersOffline.push(users[i]);
+			}
+		}
+		usersOnline.sort(<span class="fstat-no" title="function not covered" >function(a, b){</span>
+<span class="cstat-no" title="statement not covered" >			return a.username &gt; b.username;</span>
+		});
+		usersOffline.sort(<span class="fstat-no" title="function not covered" >function(a, b){</span>
+<span class="cstat-no" title="statement not covered" >			return a.username &gt; b.username;</span>
+		});
+		callback(usersOnline, usersOffline);
+	});
+};
+&nbsp;
+searchDAO.searchAnnouncement = function(words,callback){
+	let conds = [];
+	for(let i in words){
+		console.log(words[i]);
+		conds.push({"content": {$regex: new RegExp("(^|[^\\w\\d])"+words[i]+"($|[^\\w\\d])", 'i')}});
+	}
+	let query = Announcement.find({$or:conds});
+&nbsp;
+	query.sort({"_id": -1});
+	query.exec(function(err, rs){
+		callback(rs);
+	});
+};
+&nbsp;
+searchDAO.searchPublicMessages = function(words, callback){
+	let conds = [];
+	for(let i in words){
+		console.log(words[i]);
+		conds.push({"message": {$regex: new RegExp("(^|[^\\w\\d])"+words[i]+"($|[^\\w\\d])", 'i')}});
+	}
+	let query = ChatMessage.find({$or:conds});
+	query.sort({"_id": -1});
+	query.exec(function(err, rs){
+		callback(rs);
+	});
+};
+&nbsp;
+searchDAO.searchPrivateMessages = function(words, callback){
+	let conds = [];
+	for(let i in words){
+		console.log(words[i]);
+		conds.push({"message": {$regex: new RegExp("(^|[^\\w\\d])"+words[i]+"($|[^\\w\\d])", 'i')}});
+	}
+	let query = ChatPrivately.find({$or:conds});
+	query.sort({"_id": -1});
+	query.exec(function(err, rs){
+		callback(rs);
+	});
+};
+&nbsp;
+module.exports = searchDAO;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Nov 02 2016 21:03:09 GMT-0700 (PDT)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

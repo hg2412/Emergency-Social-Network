@@ -1,0 +1,47 @@
+{
+  "name": "application-name",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "test": "NODE_ENV=test mocha ./tests"
+  },
+  "dependencies": {
+    "async": "^2.1.2",
+    "body-parser": "~1.0.0",
+    "bootstrap": "^3.3.7",
+    "chai": "^3.5.0",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "~1.0.1",
+    "debug": "~0.7.4",
+    "ejs": "~0.8.5",
+    "express": "^4.0.0",
+    "express-session": "^1.14.1",
+    "formidable": "^1.0.17",
+    "fs": "0.0.1-security",
+    "istanbul": "^0.4.5",
+    "jquery": "^3.1.1",
+    "mocha": "^3.2.0",
+    "mongodb": "^2.2.10",
+    "mongoose": "^4.6.1",
+    "morgan": "~1.0.0",
+    "node-geocoder": "^3.15.1",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "should": "^11.1.1",
+    "socket.io": "^1.4.8",
+    "static-favicon": "~1.0.0",
+    "supertest": "^2.0.0"
+  },
+  "devDependencies": {
+    "expect.js": "^0.3.1",
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-mocha-istanbul": "^3.0.1",
+    "grunt-mocha-test": "^0.12.7",
+    "jshint": "^2.9.4",
+    "mocha-junit-reporter": "^1.8.0"
+  }
+}
